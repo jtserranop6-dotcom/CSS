@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Encabezado de la página -->
+  <!-- Encabezado decorado con imagen de fondo -->
   <header>
     <h1>Catálogo de Productos</h1>
     <p>Encuentra las mejores soluciones y herramientas para ti.</p>
@@ -29,6 +29,7 @@
     <section id="productos">
       <h2>Nuestros Productos Destacados</h2>
 
+      <!-- Tarjetas una al lado de la otra usando float -->
       <article class="producto-card">
         <h3>Software de Gestión Legal</h3>
         <p>Plataforma integral para el seguimiento de casos y administración de firmas jurídicas en tiempo real.</p>
@@ -42,10 +43,13 @@
         <span class="precio">$85.000 COP</span>
         <button>Comprar Ahora</button>
       </article>
+
+      <!-- Limpiador de flotado para ordenar el flujo -->
+      <div style="clear: both;"></div>
     </section>
 
-    <!-- ================= NUEVA SECCIÓN AGREGADA ABAJO ================= -->
-    <sec id="contacto" class="seccion-contacto">
+    <!-- Nueva sección de contacto agregada en la parte inferior -->
+    <section id="contacto" class="seccion-contacto">
       <h2>Contacto y Soporte</h2>
       <p>¿Tienes dudas o necesitas asesoría personalizada? Escríbenos directamente.</p>
       <form class="formulario-contacto">
@@ -54,7 +58,7 @@
         <textarea placeholder="Escribe tu mensaje aquí..." rows="4" required></textarea>
         <button type="submit">Enviar Mensaje</button>
       </form>
-    </sec
+    </section>
   </main>
 
   <!-- Pie de página -->
