@@ -1,0 +1,181 @@
+/* Estilos generales y reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Encabezado decorado con imagen de fondo según la guía */
+header {
+    background-image: url('https://img.freepik.com/fotos-premium/tecnologia-futurista-pantalla-portatil_1281529-2025.jpg'); /* Reemplaza 'tu-imagen.jpg' por el nombre o enlace de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+/* Capa opcional para mejorar la lectura del texto sobre la imagen de fondo */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Oscurece ligeramente la imagen de fondo */
+    border-radius: 8px 8px 0 0;
+    z-index: 1;
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 2; /* Asegura que el texto quede por encima de la capa oscura */
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Navegación */
+nav {
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Contenido Principal y Secciones */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Tarjetas de Productos */
+.producto-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #1abc9c;
+}
+
+.producto-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.producto-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.precio {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.producto-card button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.producto-card button:hover {
+    background-color: #16a085;
+}
+
+/* Estilos de la nueva sección de contacto abajo */
+.seccion-contacto {
+    background: #fff;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.formulario-contacto button {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.formulario-contacto button:hover {
+    background-color: #1a252f;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+}
