@@ -1,162 +1,82 @@
-/* Central de Mando: Tokens de Diseño */
-:root {
-    /* Variables de Color */
-    --color-primario: #1e293b;
-    --color-secundario: #2563eb;
-    --color-fondo: #f8fafc;
-    --color-tarjeta: #ffffff;
-    --color-texto: #334155;
-    --color-borde: #cbd5e1;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos - JurisApp Store</title>
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    /* Variables de Tipografía */
-    --fuente-principal: 'Inter', sans-serif;
+    <!-- Encabezado (El fondo de imagen se maneja completamente desde estilos.css) -->
+    <header>
+        <h1>Catálogo de Productos</h1>
+        <br>
+        <p>Encuentra las mejores soluciones y herramientas para ti.</p>
+    </header>
 
-    /* Variables de Espaciado (Box Model) */
-    --espaciado-pequeno: 8px;
-    --espaciado-medio: 16px;
-    --espaciado-grande: 24px;
-    --espaciado-xl: 32px;
-}
+    <!-- Menú de navegación principal -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
-/* Estilos Globales */
-body {
-    font-family: var(--fuente-principal);
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    margin: 0;
-    padding: var(--espaciado-grande);
-    line-height: 1.5;
-}
+    <!-- Contenido principal -->
+    <main>
+        <!-- Menú lateral de categorías -->
+        <aside class="menu-lateral">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#gestion">Gestión Legal</a></li>
+                <li><a href="#ia">Inteligencia Artificial</a></li>
+                <li><a href="#documentos">Documentación</a></li>
+            </ul>
+        </aside>
 
-/* Encabezado con Imagen de Fondo */
-header {
-    text-align: center;
-    /* Reemplaza 'fondo.jpg' por el nombre exacto de tu archivo de imagen */
-    background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0FjEkUq__mVoaIMx8aWuylN4qzIdOWn-70l9JkOANuw&s=10') no-repeat center center/cover;
-    color: #ffffff;
-    padding: var(--espaciado-xl);
-    margin-bottom: var(--espaciado-grande);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+        <!-- Sección de Productos -->
+        <section id="productos">
+            <h2>Nuestros Productos Destacados</h2>
 
-header h1 {
-    color: #ffffff;
-    margin-top: 0;
-    margin-bottom: var(--espaciado-pequeno);
-}
+            <article class="producto-card">
+                <h3>Software de Gestión Legal</h3>
+                <p>Plataforma integral para el seguimiento de casos y administración de firmas jurídicas en tiempo real.</p>
+                <span class="precio">$150.000 COP</span>
+                <button class="btn-comprar">Solicitar Cotización</button>
+            </article>
 
-header p {
-    color: #e2e8f0;
-    margin: 0;
-}
+            <article class="producto-card">
+                <h3>SmartLiner AI</h3>
+                <p>Resaltador digital inteligente con escaneo OCR y generación automática de resúmenes de estudio.</p>
+                <span class="precio">$85.000 COP</span>
+                <button class="btn-comprar">Comprar Ahora</button>
+            </article>
 
-nav {
-    text-align: center;
-    margin-bottom: var(--espaciado-xl);
-}
+            <div style="clear: both;"></div>
+        </section>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="seccion-contacto">
+            <h2>Contacto y Soporte</h2>
+            <p>¿Tienes dudas o necesitas asesoría personalizada? Escribenos directamente.</p>
+            <form class="formulario-contacto">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Correo Electrónico" required>
+                <textarea placeholder="Escribe tu mensaje aquí..." rows="4" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
 
-nav li {
-    display: inline-block;
-    margin: 0 var(--espaciado-medio);
-}
-
-nav a {
-    color: var(--color-secundario);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Sección de Productos */
-#productos h2 {
-    color: var(--color-primario);
-    margin-bottom: var(--espaciado-grande);
-}
-
-.producto-card {
-    background-color: var(--color-tarjeta);
-    padding: var(--espaciado-grande);
-    margin-bottom: var(--espaciado-grande);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-borde);
-    width: 48%;
-    float: left;
-    margin-right: 2%;
-    box-sizing: border-box;
-}
-
-.producto-card h3 {
-    color: var(--color-secundario);
-    margin-top: 0;
-    margin-bottom: var(--espaciado-pequeno);
-}
-
-.producto-card p {
-    margin-bottom: var(--espaciado-medio);
-}
-
-.precio {
-    display: block;
-    font-weight: bold;
-    color: var(--color-primario);
-    margin-bottom: var(--espaciado-medio);
-}
-
-.producto-card button, .seccion-contacto button {
-    background-color: var(--color-secundario);
-    color: #ffffff;
-    border: none;
-    padding: var(--espaciado-pequeno) var(--espaciado-medio);
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: var(--fuente-principal);
-    font-weight: 600;
-}
-
-.producto-card button:hover, .seccion-contacto button:hover {
-    opacity: 0.9;
-}
-
-/* Sección de Contacto */
-.seccion-contacto {
-    background-color: var(--color-tarjeta);
-    padding: var(--espaciado-grande);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-borde);
-    margin-top: var(--espaciado-xl);
-    float: none;
-    clear: both;
-}
-
-.formulario-contacto input,
-.formulario-contacto textarea {
-    display: block;
-    width: 100%;
-    padding: var(--espaciado-pequeno);
-    margin-bottom: var(--espaciado-medio);
-    border: 1px solid var(--color-borde);
-    border-radius: 4px;
-    font-family: var(--fuente-principal);
-    box-sizing: border-box;
-}
-
-/* Pie de página */
-footer {
-    text-align: center;
-    margin-top: var(--espaciado-xl);
-    color: #64748b;
-    font-size: 0.9rem;
-    clear: both;
-}
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Jessica Tatiana Serrano Pérez - Análisis y Desarrollo de Software (SENA).</p>
+    </footer>
+</body>
+</html>
