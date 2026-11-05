@@ -62,8 +62,20 @@ Durante la auditoría del modelo de caja utilizando las herramientas de desarrol
      - `--espaciado-grande`: `20px`
      - `--espaciado-xl`: `30px`
 
-2. **Ventaja de reutilizar medidas de margen y relleno:**
+2. **Ventaja de reutilizar medidas de marsgen y relleno:**
    - La reutilización de tokens de espaciado elimina la duplicación de valores arbitrarios, garantizando una escala armónica y permitiendo realizar modificaciones globales de manera instantánea desde `:root`.
 
 3. **De qué manera la centralización en :root previene colisiones visuales a medida que la hoja de estilos crece:**
    - Al unificar los valores clave en un solo lugar, se reduce la deuda técnica y se evita la sobreescritura caótica de selectores, asegurando que cualquier componente nuevo mantenga la coherencia visual del sistema de diseño[cite: 2].
+
+
+   ## Hallazgos: Pseudoclases y Pseudoelementos
+
+1. **La diferencia funcional entre una pseudoclase y un pseudoelemento:**
+   - Una **pseudoclase** (como `:hover`, `:active` o `:focus`) reacciona a los estados o acciones del usuario sobre un elemento existente[cite: 10, 11]. Un **pseudoelemento** (como `::before` o `::after`) permite insertar y estilizar contenido virtual de forma dinámica sin alterar la estructura HTML[cite: 10, 11].
+
+2. **La importancia técnica de la pseudoclase `:focus` para cumplir con buenas prácticas de accesibilidad web:**
+   - Permite que los usuarios que navegan con el teclado (tecla Tab) identifiquen visualmente el elemento activo mediante un contorno personalizado, facilitando la accesibilidad web.
+
+3. **Por qué es una buena práctica inyectar elementos decorativos desde CSS con `::before`/`::after`:**
+   - Mantiene el marcado HTML limpio y estrictamente semántico, separando la presentación visual y los detalles puramente decorativos hacia la capa de estilos[cite: 10, 11].

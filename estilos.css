@@ -1,17 +1,12 @@
 /* Central de Mando: Tokens de Diseño */
 :root {
-    /* Variables de Color */
     --color-primario: #1e293b;
-    --color-secundario: #2563eb;
+    --color-secundario: #7c3aed; /* Actualizado al tono morado vibrante */
     --color-fondo: #f8fafc;
-    --color-tarjeta: #ffffff;
+    --color-tarjeta: #f3f4f6; /* ¡Cajas mejoradas! Un gris suave y moderno (ya no es blanco puro) */
     --color-texto: #334155;
-    --color-borde: #cbd5e1;
-
-    /* Variables de Tipografía */
+    --color-borde: #d1d5db;
     --fuente-principal: 'Inter', sans-serif;
-
-    /* Variables de Espaciado (Box Model) */
     --espaciado-pequeno: 8px;
     --espaciado-medio: 16px;
     --espaciado-grande: 24px;
@@ -28,11 +23,10 @@ body {
     line-height: 1.5;
 }
 
-/* Encabezado con Imagen de Fondo */
+/* Encabezado con imagen de fondo por URL */
 header {
     text-align: center;
-    /* Reemplaza 'fondo.jpg' por el nombre exacto de tu archivo de imagen */
-    background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('fondo.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop') no-repeat center center/cover;
     color: #ffffff;
     padding: var(--espaciado-xl);
     margin-bottom: var(--espaciado-grande);
@@ -51,6 +45,7 @@ header p {
     margin: 0;
 }
 
+/* Menú de navegación superior */
 nav {
     text-align: center;
     margin-bottom: var(--espaciado-xl);
@@ -71,20 +66,91 @@ nav a {
     color: var(--color-secundario);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
+    color: #6d28d9;
     text-decoration: underline;
 }
 
+/* Menú lateral (<aside>) con caja de color personalizado */
+.menu-lateral {
+    background-color: var(--color-tarjeta); /* Color mejorado */
+    padding: var(--espaciado-grande);
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    width: 22%;
+    float: left;
+    margin-right: 3%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.menu-lateral:hover {
+    box-shadow: 0 8px 15px rgba(124, 58, 237, 0.1);
+    border-color: var(--color-secundario);
+}
+
+.menu-lateral h3 {
+    color: var(--color-primario);
+    margin-top: 0;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li {
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+.menu-lateral a {
+    display: block;
+    padding: var(--espaciado-pequeno);
+    color: var(--color-texto);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu-lateral a::before {
+    content: "• ";
+    color: var(--color-secundario);
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.menu-lateral a:hover {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    padding-left: 12px;
+}
+
+.menu-lateral a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}
+
 /* Sección de Productos */
+#productos {
+    float: left;
+    width: 75%;
+}
+
 #productos h2 {
     color: var(--color-primario);
     margin-bottom: var(--espaciado-grande);
+    margin-top: 0;
 }
 
+/* Tarjetas de productos con fondo mejorado */
 .producto-card {
-    background-color: var(--color-tarjeta);
+    background-color: var(--color-tarjeta); /* Color mejorado (gris moderno) */
     padding: var(--espaciado-grande);
     margin-bottom: var(--espaciado-grande);
     border-radius: 8px;
@@ -94,6 +160,29 @@ nav a:hover {
     float: left;
     margin-right: 2%;
     box-sizing: border-box;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(124, 58, 237, 0.15);
+    border-color: var(--color-secundario);
+    background-color: #ffffff; /* Al pasar el mouse se aclaran a blanco para dar efecto dinámico */
+}
+
+.producto-card::after {
+    content: "¡Nuevo!";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
 }
 
 .producto-card h3 {
@@ -113,7 +202,10 @@ nav a:hover {
     margin-bottom: var(--espaciado-medio);
 }
 
-.producto-card button, .seccion-contacto button {
+/* Botones interactivos mejorados */
+.btn-comprar, 
+.seccion-contacto button,
+button {
     background-color: var(--color-secundario);
     color: #ffffff;
     border: none;
@@ -122,22 +214,39 @@ nav a:hover {
     cursor: pointer;
     font-family: var(--fuente-principal);
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.producto-card button:hover, .seccion-contacto button:hover {
-    opacity: 0.9;
+.btn-comprar:hover, 
+.seccion-contacto button:hover,
+button:hover {
+    background-color: #6d28d9 !important;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
 }
 
-/* Sección de Contacto */
+.btn-comprar:active, 
+.seccion-contacto button:active,
+button:active {
+    transform: translateY(2px) scale(1);
+}
+
+/* Sección de Contacto con caja mejorada */
 .seccion-contacto {
-    background-color: var(--color-tarjeta);
+    background-color: var(--color-tarjeta); /* Color mejorado */
     padding: var(--espaciado-grande);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--color-borde);
     margin-top: var(--espaciado-xl);
-    float: none;
     clear: both;
+    transition: all 0.3s ease;
+}
+
+.seccion-contacto:hover {
+    box-shadow: 0 8px 15px rgba(124, 58, 237, 0.1);
+    border-color: var(--color-secundario);
 }
 
 .formulario-contacto input,
@@ -146,10 +255,19 @@ nav a:hover {
     width: 100%;
     padding: var(--espaciado-pequeno);
     margin-bottom: var(--espaciado-medio);
+    background-color: #ffffff; /* Los inputs se mantienen blancos para escribir con claridad */
     border: 1px solid var(--color-borde);
     border-radius: 4px;
     font-family: var(--fuente-principal);
     box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
 }
 
 /* Pie de página */
