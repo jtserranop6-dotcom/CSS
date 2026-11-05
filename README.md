@@ -44,3 +44,26 @@ Durante la auditoría del modelo de caja utilizando las herramientas de desarrol
 
 2. **Por qué es fundamental para el diseño:** 
    Comprender y auditar el modelo de caja es vital porque nos permite controlar con precisión las dimensiones exactas de los componentes, evitar desbordamientos visuales y asegurar una estructura limpia, ordenada y adaptable en todo el catálogo de productos.
+
+   ## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+1. **Lista completa de variables declaradas:**
+   - **Colores:**
+     - `--color-primario`: `#333333` (Color principal para títulos).
+     - `--color-secundario`: `#2563eb` (Color de acento para subtítulos).
+     - `--color-fondo`: `#f4f4f4` (Color de fondo de la interfaz).
+     - `--color-tarjeta`: `#ffffff` (Color de fondo de los contenedores).
+     - `--color-texto`: `#333333` (Color general del texto).
+   - **Tipografía:**
+     - `--fuente-principal`: `'Inter', sans-serif` (Tipografía importada desde Google Fonts).
+   - **Espaciados (Box Model):**
+     - `--espaciado-pequeno`: `8px`
+     - `--espaciado-medio`: `15px`
+     - `--espaciado-grande`: `20px`
+     - `--espaciado-xl`: `30px`
+
+2. **Ventaja de reutilizar medidas de margen y relleno:**
+   - La reutilización de tokens de espaciado elimina la duplicación de valores arbitrarios, garantizando una escala armónica y permitiendo realizar modificaciones globales de manera instantánea desde `:root`.
+
+3. **De qué manera la centralización en :root previene colisiones visuales a medida que la hoja de estilos crece:**
+   - Al unificar los valores clave en un solo lugar, se reduce la deuda técnica y se evita la sobreescritura caótica de selectores, asegurando que cualquier componente nuevo mantenga la coherencia visual del sistema de diseño[cite: 2].
