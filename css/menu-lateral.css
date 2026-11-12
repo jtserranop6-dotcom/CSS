@@ -1,0 +1,55 @@
+.sidebar {
+    background-color: var(--color-tarjeta);
+    padding: var(--espaciado-grande);
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    width: 22%;
+    float: left;
+    margin-right: 3%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+    box-shadow: 0 8px 15px rgba(124, 58, 237, 0.1);
+    border-color: var(--color-secundario);
+}
+
+.sidebar__title {
+    color: var(--color-primario);
+    margin-top: 0;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.sidebar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__item {
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+.sidebar__link {
+    display: block;
+    padding: var(--espaciado-pequeno);
+    color: var(--color-texto);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar__link::before {
+    content: "• ";
+    color: var(--color-secundario);
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.sidebar__link:hover {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    padding-left: 12px;
+}

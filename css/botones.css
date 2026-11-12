@@ -1,0 +1,39 @@
+.card__button,
+.contact__button,
+button {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    border: 2px solid var(--color-secundario);
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card__button--secundario {
+    background-color: transparent;
+    color: var(--color-secundario);
+}
+
+.card__button:hover,
+.contact__button:hover,
+button:hover {
+    background-color: #6d28d9 !important;
+    border-color: #6d28d9 !important;
+    color: #ffffff;
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.card__button--secundario:hover {
+    background-color: var(--color-secundario) !important;
+    color: #ffffff;
+}
+
+.card__button:active,
+.contact__button:active,
+button:active {
+    transform: translateY(2px) scale(1);
+}

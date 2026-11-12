@@ -79,3 +79,20 @@ Durante la auditoría del modelo de caja utilizando las herramientas de desarrol
 
 3. **Por qué es una buena práctica inyectar elementos decorativos desde CSS con `::before`/`::after`:**
    - Mantiene el marcado HTML limpio y estrictamente semántico, separando la presentación visual y los detalles puramente decorativos hacia la capa de estilos[cite: 10, 11].
+
+
+# Hallazgos: Arquitectura BEM y Modularidad
+
+1. **¿Qué significa la sigla BEM y cómo se escribe visualmente?**
+   * **BEM** significa **Block, Element, Modifier** (*Bloque, Elemento, Modificador*)[cite: 2].
+   * Visualmente se escribe combinando el nombre del bloque independiente, seguido de un doble guion bajo (`__`) para sus elementos internos, y un doble guion medio (`--`) para sus variaciones o estados[cite: 2, 3]:
+     * **Bloque:** `.card`
+     * **Elemento:** `.card__title`, `.card__price`, `.card__button`[cite: 3]
+     * **Modificador:** `.card--destacada`, `.card__button--secundario`[cite: 3]
+
+2. **¿Por qué dividir el CSS en varios archivos facilita el trabajo colaborativo?**
+   * Al desacoplar una hoja de estilos gigante en módulos pequeños e independientes (`tarjeta.css`, `botones.css`, `menu-lateral.css`, `navegacion.css`) conectados mediante `@import`, varios desarrolladores pueden trabajar en distintos componentes al mismo tiempo sin pisar el código del otro ni provocar conflictos de fusión (*merge conflicts*) en Git[cite: 2, 3]. Además, facilita ubicar y corregir errores rápidamente[cite: 2].
+
+3. **¿Cómo esta metodología evita la guerra de especificidad (Cascada)?**
+   * En CSS tradicional, usar selectores anidados (como `#productos .producto-card h3`) aumenta el peso de especificidad y obliga a usar reglas más largas o `!important` para sobrescribir estilos[cite: 2, 3]. 
+   * Con BEM, todos los selectores se mantienen planos utilizando **una única clase por regla** (peso de especificidad `10`), lo que elimina colisiones accidentales y hace que el comportamiento de la cascada sea completamente predecible y escalable
