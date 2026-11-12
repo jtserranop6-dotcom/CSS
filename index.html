@@ -1,81 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos - JurisApp Store</title>
-    <link rel="stylesheet" href="estilos.css">
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos - JurisApp Store</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Encabezado con imagen de fondo por URL -->
-    <header>
-        <h1>Catálogo de Productos</h1>
-        <p>Encuentra las mejores soluciones y herramientas para ti.</p>
-    </header>
+  <header class="header">
+    <h1 class="header__title">Catálogo de Productos</h1>
+    <p class="header__description">Encuentra las mejores soluciones y herramientas para ti.</p>
+  </header>
 
-    <!-- Menú de navegación principal -->
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="#productos" class="nav__link">Productos</a></li>
+      <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+    </ul>
+  </nav>
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Menú lateral de categorías exigido para pseudoclases y pseudoelementos -->
-        <aside class="menu-lateral">
-            <h3>Categorías</h3>
-            <ul>
-                <li><a href="#gestion">Gestión Legal</a></li>
-                <li><a href="#ia">Inteligencia Artificial</a></li>
-                <li><a href="#documentos">Documentación</a></li>
-            </ul>
-        </aside>
+  <main class="main-container">
+    <aside class="sidebar">
+      <h3 class="sidebar__title">Categorías</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item"><a href="#gestion" class="sidebar__link">Gestión Legal</a></li>
+        <li class="sidebar__item"><a href="#ia" class="sidebar__link">Inteligencia Artificial</a></li>
+        <li class="sidebar__item"><a href="#documentos" class="sidebar__link">Documentación</a></li>
+      </ul>
+    </aside>
 
-        <!-- Sección de Productos -->
-        <section id="productos">
-            <h2>Nuestros Productos Destacados</h2>
+    <section id="productos" class="products">
+      <h2 class="products__title">Nuestros Productos Destacados</h2>
 
-            <article class="producto-card">
-                <h3>Software de Gestión Legal</h3>
-                <p>Plataforma integral para el seguimiento de casos y administración de firmas jurídicas en tiempo real.</p>
-                <span class="precio">$150.000 COP</span>
-                <button class="btn-comprar">Solicitar Cotización</button>
-            </article>
+      <!-- Tarjeta 1 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80"
+          alt="Software de Gestión Legal" class="card__image">
+        <h3 class="card__title">Software de Gestión Legal</h3>
+        <p class="card__description">Plataforma integral para el seguimiento de casos y administración de firmas
+          jurídicas en tiempo real.</p>
+        <span class="card__price">$150.000 COP</span>
+        <div class="card__actions">
+          <button class="card__button">Comprar Ahora</button>
+          <button class="card__button card__button--secundario">Ver Detalles</button>
+        </div>
+      </article>
 
-            <article class="producto-card">
-                <h3>SmartLiner AI</h3>
-                <p>Resaltador digital inteligente con escaneo OCR y generación automática de resúmenes de estudio.</p>
-                <span class="precio">$85.000 COP</span>
-                <button class="btn-comprar">Comprar Ahora</button>
-            </article>
+      <!-- Tarjeta 2 (Con Modificador --destacada) -->
+      <article class="card card--destacada">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+          alt="SmartLiner AI" class="card__image">
+        <h3 class="card__title">SmartLiner AI</h3>
+        <p class="card__description">Resaltador digital inteligente con escaneo OCR y generación automática de resúmenes
+          de estudio.</p>
+        <span class="card__price">$85.000 COP</span>
+        <div class="card__actions">
+          <button class="card__button">Comprar Ahora</button>
+          <button class="card__button card__button--secundario">Ver Detalles</button>
+        </div>
+      </article>
 
-            <div style="clear: both;"></div>
-        </section>
+      <div style="clear: both;"></div>
+    </section>
 
-        <!-- Sección de Contacto -->
-        <section id="contacto" class="seccion-contacto">
-            <h2>Contacto y Soporte</h2>
-            <p>¿Tienes dudas o necesitas asesoría personalizada? Escríbenos directamente.</p>
-            <form class="formulario-contacto">
-                <input type="text" placeholder="Tu Nombre" required>
-                <input type="email" placeholder="Tu Correo Electrónico" required>
-                <textarea placeholder="Escribe tu mensaje aquí..." rows="4" required></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </section>
-    </main>
+    <section id="contacto" class="contact">
+      <h2 class="contact__title">Contacto y Soporte</h2>
+      <p class="contact__description">¿Tienes dudas o necesitas asesoría personalizada? Escríbenos directamente.</p>
+      <form class="contact__form">
+        <input type="text" class="contact__input" placeholder="Tu Nombre" required>
+        <input type="email" class="contact__input" placeholder="Tu Correo Electrónico" required>
+        <textarea class="contact__textarea" placeholder="Escribe tu mensaje aquí..." rows="4" required></textarea>
+        <button type="submit" class="contact__button">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2026 Jessica Tatiana Serrano Pérez - Análisis y Desarrollo de Software (SENA).</p>
-    </footer>
+  <footer class="footer">
+    <p class="footer__text">&copy; 2026 Jessica Tatiana Serrano Pérez - Análisis y Desarrollo de Software (SENA).</p>
+  </footer>
 </body>
+
 </html>
