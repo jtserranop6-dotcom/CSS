@@ -1,13 +1,13 @@
 .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1 1 300px;
     background-color: var(--color-tarjeta);
     padding: var(--espaciado-grande);
-    margin-bottom: var(--espaciado-grande);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--color-borde);
-    width: 48%;
-    float: left;
-    margin-right: 2%;
     box-sizing: border-box;
     position: relative;
     transition: all 0.3s ease;
@@ -50,14 +50,28 @@
 }
 
 .card__description {
+    flex-grow: 1;
+    margin-top: 0;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.card__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin-bottom: var(--espaciado-medio);
 }
 
 .card__price {
-    display: block;
-    font-weight: bold;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--color-primario);
-    margin-bottom: var(--espaciado-medio);
+}
+
+.card__price-old {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-decoration: line-through;
 }
 
 .card__actions {

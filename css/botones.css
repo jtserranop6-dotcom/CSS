@@ -12,6 +12,10 @@ button {
     transition: all 0.3s ease;
 }
 
+.card__button {
+    flex: 1;
+}
+
 .card__button--secundario {
     background-color: transparent;
     color: var(--color-secundario);

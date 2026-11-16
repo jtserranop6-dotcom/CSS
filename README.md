@@ -96,3 +96,10 @@ Durante la auditoría del modelo de caja utilizando las herramientas de desarrol
 3. **¿Cómo esta metodología evita la guerra de especificidad (Cascada)?**
    * En CSS tradicional, usar selectores anidados (como `#productos .producto-card h3`) aumenta el peso de especificidad y obliga a usar reglas más largas o `!important` para sobrescribir estilos[cite: 2, 3]. 
    * Con BEM, todos los selectores se mantienen planos utilizando **una única clase por regla** (peso de especificidad `10`), lo que elimina colisiones accidentales y hace que el comportamiento de la cascada sea completamente predecible y escalable
+
+
+   ## Hallazgos: Arquitectura Total con Flexbox
+
+1. **Importancia de `min-height: 100vh` y `flex-direction: column` en el contenedor global (`.app-layout`):** Permitió que la estructura general ocupe siempre el 100% del alto de la pantalla del navegador y apile el encabezado, el área central y el pie de página de forma vertical. Al combinarlo con `flex: 1` en `.main-wrapper`, el contenido central absorbe todo el espacio sobrante y empuja el `.footer` hacia el borde inferior sin que quede flotando.
+2. **Reemplazo de márgenes laterales por `gap` en la navegación:** Aplicar `display: flex` y `gap: var(--espaciado-medio)` directamente en `.nav__list` eliminó la necesidad de usar `float` o márgenes individuales entre enlaces, logrando una separación limpia, uniforme y gobernada desde las Custom Properties.
+3. **Sinergia de BEM, Custom Properties y Flexbox en las tarjetas (`.card`):** La nomenclatura BEM mantuvo aislados los bloques y modificadores sin colisiones, las variables centralizaron espaciados y colores, y Flexbox (con `flex-direction: column` en `.card` y `flex-grow: 1` en `.card__description`) funcionó como un resorte que absorbe textos de distinta longitud para mantener todos los botones perfectamente alineados en la base.
